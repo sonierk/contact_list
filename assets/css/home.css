@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+#page-heading{
+    text-align: center;
+    margin-top: 20px;
+    color: grey;
+}
+
+#contact-list-container ul{
+    padding: 0;
+    list-style: none;
+}
+
+.contact {
+    padding: 3px 10px;
+    border: 1px solid white;
+    background-color: lightblue;
+    box-shadow: 1px 1px 1px 1px lightgray;
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.contact .details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.contact .delete {
+    width: 10%;
+}
+
