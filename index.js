@@ -1,7 +1,9 @@
 const express = require('express');
 const path = require('path');
 const port = 8000;
+
 const db = require('./config/mongoose');
+const Contact = require('./models/contact')
 
 const app = express();
 // views
@@ -53,18 +55,45 @@ app.get('/practice', function(req,res){
     });
 });
 
-// for creating a contact
-app.post('/create-contact', function(req,res){
+// // for creating a contact
+// app.post('/create-contact', function(req,res){
 
-// Add the new item to the array
-    contactList.push(req.body);
-    // contactList.push({
-    //     name: req.body.name,
-    //     phone: req.body.phone
-    // });
+// // Add the new item to the array
+//     // contactList.push(req.body);
+//     // contactList.push({
+//     //     name: req.body.name,
+//     //     phone: req.body.phone
+//     // });
+//     // return res.redirect('back');
 
-    return res.redirect('back');
+//     // Push to the DB
+//     Contact.create({
+//         name: req.body.name,
+//         phone: req.body.phone
+//     }, function(err, newContact){
+//         if(err){console.log('error in creating a contact'); return;}
+
+//         console.log('**********', newContact);
+//         return res.redirect('back');
+//     })
+
+    
+// });
+
+app.post('/create-contact', function(req, res){
+    
+    
+    Contact.create({
+        name: req.body.name,
+        phone: req.body.name
+    }, function(err, newContact){
+        if(err){console.log('Error in creating a contact!')
+            return;}
+            console.log('******', newContact);
+            return res.redirect('back');
+    })
 });
+
 // for deleteting a contact
 app.get('/delete-contact', function(req,res){
     // Using params
