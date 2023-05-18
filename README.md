@@ -10,3 +10,8 @@ npm install ejs
 form+ post req
 static files
     middleware app.use(static)
+
+
+
+Database implementation :
+
